@@ -1,11 +1,31 @@
 package dxc.b2.rest;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name = "students")
 public class Student {
 	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
+	
+	@Column
 	String name;
+	@Column
 	int sem;
+	@Column
 	int avg;
+	
+	public Student() {}
 	public Student(int id, String name, int sem, int avg) {
 		super();
 		this.id = id;
